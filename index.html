@@ -12,61 +12,45 @@
         background: #0b1d14;
         color: #f4f4f4;
     }
-
     header {
         padding: 40px 20px;
         text-align: center;
         background: linear-gradient(to right, #14532d, #0f766e);
     }
-
     h1 { margin: 0; font-size: 2.5rem; }
     p { margin: 5px 0; opacity: 0.9; }
-
-    .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 20px;
-    }
-
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
     .progress-bar {
         background: #1f2937;
         border-radius: 20px;
         overflow: hidden;
         margin: 20px 0;
     }
-
     .progress {
         height: 20px;
         background: #22c55e;
         width: 0%;
         transition: width 0.5s ease-in-out;
     }
-
     .stats {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
         margin: 20px 0;
     }
-
     .card {
         background: #111827;
         padding: 15px;
         border-radius: 12px;
         text-align: center;
     }
-
     .hike {
         background: #111827;
         margin: 10px 0;
         padding: 15px;
         border-radius: 12px;
     }
-
-    .small {
-        opacity: 0.8;
-        font-size: 0.9rem;
-    }
+    .small { opacity: 0.8; font-size: 0.9rem; }
 </style>
 </head>
 
@@ -89,67 +73,121 @@
     <p id="weekends"></p>
 
     <div class="stats">
-        <div class="card"><h3 id="miles">~</h3><p>Total Miles</p></div>
-        <div class="card"><h3 id="hikes">23</h3><p>Hikes Completed</p></div>
-        <div class="card"><h3>52</h3><p>Goal</p></div>
-        <div class="card"><h3 id="partners">~</h3><p>Partners</p></div>
+        <div class="card"><h3 id="miles">0</h3><p>Total Miles</p></div>
+        <div class="card"><h3 id="hikes">0</h3><p>Hikes Completed</p></div>
+        <div class="card"><h3 id="goal">52</h3><p>Goal</p></div>
+        <div class="card"><h3 id="partners">0</h3><p>Partners</p></div>
     </div>
 
     <h2>🧭 Hike Log</h2>
+    <div id="hikeLog"></div>
 
-    <div class="hike">1. Stinson Beach → Mt. Tamalpais <div class="small">May 23, 2026 • 15 miles • Pawan, Racha, Shishupal</div></div>
-    <div class="hike">2. Purisima Creek Redwoods <div class="small">May 30, 2026 • 7–8 miles • THE Meetup Group</div></div>
-    <div class="hike">3. Falls Creek, Felton <div class="small">June 7, 2026 • 7–8 miles • Naresh, Dinesh, Bharat and THE Meetup Group</div></div>
-    <div class="hike">4. Waihee Ridge Trail, Maui <div class="small">June 14, 2026 • 5 miles • Pinki, Leena</div></div>
-    <div class="hike">5. Kīlauea Iki Lava Trail <div class="small">June 17, 2026 • ~4 miles • Pinki, Nivi, Avni, Leena, Shirish, Asmi, Aani, Racha, Lalit, Priya, Naresh, Chitra</div></div>
-    <div class="hike">6. Mount Livermore, Angel Island <div class="small">July 3, 2026 • ~6 miles • Nivi, Avni</div></div>
-    <div class="hike">7. Big Basin hike, Berry Creek (partial) <div class="small">July 4, 2026 • ~6 miles • Pinki</div></div>
-    <div class="hike">8. Montara Mountain North Peak Loop <div class="small">July 12, 2026 • 7.5 miles • Dinesh</div></div>
-    <div class="hike">9. Lookout trail and Coyote creek Loop Stevens Creek Reservoir <div class="small">July 18, 2026 • 6.5 miles </div></div>
-    <div class="hike">10. Mount Umunhum <div class="small">July 25, 2026 • 8.1 miles • Dinesh, Tina </div></div>
-    <div class="hike">11. Bear Creek Summit via Madrone Knoll Trail and Alma Trail Umunhum <div class="small">August 1, 2026 • 7.4 miles • Dinesh, Tina, Pawan </div></div>  
-    <div class="hike">12. Black Mountain through PGE <div class="small">August 8, 2026 • 12.8 miles • Dinesh, Pawan, Naresh, Guoyu </div></div>  
-    <div class="hike">13. Chamise and Upper Rogue valley trail loop <div class="small">August 15, 2026 • 7 miles </div></div>  
-    <div class="hike">14. Four Mile Trail Yosemite <div class="small">August 22, 2026 • 11 miles • Pawan, Naresh, Bharat </div></div>  
-    <div class="hike">15. Skyline Watershed Ridge <div class="small">August 30, 2026 • 12 miles • THE Meetup group </div></div>  
-    <div class="hike">16. Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop <div class="small">September 06, 2026 • 6 miles </div></div>  
-    <div class="hike">17. Hamms Gulch to Spring Ridge loop (Windy Hill) <div class="small">September 12, 2026 • 7.5 miles • Srini </div></div>  
-    <div class="hike">18. Torrey Pines from Glider Port <div class="small">September 18, 2026 • 4 miles • Pradeep, Prathibaa </div></div>  
-    <div class="hike">19. Pacific Ranch trail to Nob Hill loop <div class="small">September 26, 2026 • 5 miles </div></div>
-    <div class="hike">20. Bear Gulch, Skyline and Alambique loop <div class="small">October 03, 2026 • 10 miles • Srini </div></div>
-    <div class="hike">21. Methuselah, North Leaf and Fir loop <div class="small">October 10, 2026 • 8 miles • Srini </div></div>
-    <div class="hike">22. Penasquitos Canyon Rim to Rim <div class="small">October 17, 2026 • 6 miles • Prathibaa </div></div>
-    <div class="hike">23. Hidden Villa, Rhus Ridge, Black Mountain, Creek Tail Loop <div class="small">October 24, 2026 • 5.5 miles </div></div>
-    
 </div>
 
 <script>
-const totalGoal = 52;
-const hikesDone = 23;
+/* =====================================================
+   ADD NEW HIKES HERE — just copy a line and edit it.
+   date:     "YYYY-MM-DD"
+   name:     hike name
+   miles:    a number (use the midpoint for ranges, e.g. 7.5 for 7–8)
+   partners: people's names, e.g. ["Pawan", "Naresh"]  (leave [] if solo)
+   groups:   optional, e.g. ["THE Meetup Group"] (shown in the log, not counted as partners)
+   Everything else (count, miles, partners, progress) updates automatically.
+   ===================================================== */
+const HIKES = [
+  { date: "2026-05-23", name: "Stinson Beach → Mt. Tamalpais", miles: 15, partners: ["Pawan", "Racha", "Shishupal"] },
+  { date: "2026-05-30", name: "Purisima Creek Redwoods", miles: 7.5, partners: [], groups: ["THE Meetup Group"] },
+  { date: "2026-06-07", name: "Falls Creek, Felton", miles: 7.5, partners: ["Naresh", "Dinesh", "Bharat"], groups: ["THE Meetup Group"] },
+  { date: "2026-06-14", name: "Waihee Ridge Trail, Maui", miles: 5, partners: ["Pinki", "Leena"] },
+  { date: "2026-06-17", name: "Kīlauea Iki Lava Trail", miles: 4, partners: ["Pinki", "Nivi", "Avni", "Leena", "Shirish", "Asmi", "Aani", "Racha", "Lalit", "Priya", "Naresh", "Chitra"] },
+  { date: "2026-07-03", name: "Mount Livermore, Angel Island", miles: 6, partners: ["Nivi", "Avni"] },
+  { date: "2026-07-04", name: "Big Basin hike, Berry Creek (partial)", miles: 6, partners: ["Pinki"] },
+  { date: "2026-07-12", name: "Montara Mountain North Peak Loop", miles: 7.5, partners: ["Dinesh"] },
+  { date: "2026-07-18", name: "Lookout trail and Coyote creek Loop Stevens Creek Reservoir", miles: 6.5, partners: [] },
+  { date: "2026-07-25", name: "Mount Umunhum", miles: 8.1, partners: ["Dinesh", "Tina"] },
+  { date: "2026-08-01", name: "Bear Creek Summit via Madrone Knoll Trail and Alma Trail Umunhum", miles: 7.4, partners: ["Dinesh", "Tina", "Pawan"] },
+  { date: "2026-08-08", name: "Black Mountain through PGE", miles: 12.8, partners: ["Dinesh", "Pawan", "Naresh", "Guoyu"] },
+  { date: "2026-08-15", name: "Chamise and Upper Rogue valley trail loop", miles: 7, partners: [] },
+  { date: "2026-08-22", name: "Four Mile Trail Yosemite", miles: 11, partners: ["Pawan", "Naresh", "Bharat"] },
+  { date: "2026-08-30", name: "Skyline Watershed Ridge", miles: 12, partners: [], groups: ["THE Meetup Group"] },
+  { date: "2026-09-06", name: "Dick Bishop, Hassler, Dusky-Footed Woodrat, and Polly Geraci Loop", miles: 6, partners: [] },
+  { date: "2026-09-12", name: "Hamms Gulch to Spring Ridge loop (Windy Hill)", miles: 7.5, partners: ["Srini"] },
+  { date: "2026-09-18", name: "Torrey Pines from Glider Port", miles: 4, partners: ["Pradeep", "Prathibaa"] },
+  { date: "2026-09-26", name: "Pacific Ranch trail to Nob Hill loop", miles: 5, partners: [] },
+  { date: "2026-10-03", name: "Bear Gulch, Skyline and Alambique loop", miles: 10, partners: ["Srini"] },
+  { date: "2026-10-10", name: "Methuselah, North Leaf and Fir loop", miles: 8, partners: ["Srini"] },
+  { date: "2026-10-17", name: "Penasquitos Canyon Rim to Rim", miles: 6, partners: ["Prathibaa"] },
+  { date: "2026-10-24", name: "Hidden Villa, Rhus Ridge, Black Mountain, Creek Tail Loop", miles: 5.5, partners: [] },
+];
 
-const start = new Date("2026-05-23");
-const end = new Date("2027-05-22");
-const today = new Date();
+/* ---------- Settings ---------- */
+const GOAL = 52;
+const END = new Date(2027, 4, 22); // May 22, 2027 (month is 0-indexed)
 
-// Progress
-const progressPercent = (hikesDone / totalGoal) * 100;
-document.getElementById("progress").style.width = progressPercent + "%";
-document.getElementById("progressText").innerText =
-    `${hikesDone} / ${totalGoal} hikes completed (${progressPercent.toFixed(1)}%)`;
-
-// Weekends remaining (count Saturdays)
-let weekends = 0;
-let d = new Date(today);
-while (d <= end) {
-    if (d.getDay() === 6) weekends++; // Saturday
-    d.setDate(d.getDate() + 1);
+/* ---------- Helpers ---------- */
+function parseDate(s) {
+  const [y, m, d] = s.split("-").map(Number);
+  return new Date(y, m - 1, d);
 }
-document.getElementById("weekends").innerText =
-    `📅 ${weekends} Saturdays left until target date (May 22, 2027)`;
+function formatDate(s) {
+  return parseDate(s).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+function formatMiles(n) {
+  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
 
-// Rough stats placeholders
-document.getElementById("miles").innerText = "~178";
-document.getElementById("partners").innerText = "~20+";
+/* ---------- Computed stats ---------- */
+const hikes = [...HIKES].sort((a, b) => parseDate(a.date) - parseDate(b.date));
+const hikesDone = hikes.length;
+const totalMiles = hikes.reduce((sum, h) => sum + (Number(h.miles) || 0), 0);
+
+// Unique partners (case-insensitive, whitespace-trimmed)
+const partnerSet = new Set();
+hikes.forEach(h => (h.partners || []).forEach(p => {
+  const name = p.trim().toLowerCase();
+  if (name) partnerSet.add(name);
+}));
+
+const progressPercent = Math.min(100, (hikesDone / GOAL) * 100);
+
+// Saturdays left (today through end date)
+let weekends = 0;
+const d = new Date();
+d.setHours(0, 0, 0, 0);
+while (d <= END) {
+  if (d.getDay() === 6) weekends++;
+  d.setDate(d.getDate() + 1);
+}
+
+/* ---------- Render ---------- */
+document.getElementById("progress").style.width = progressPercent + "%";
+document.getElementById("progressText").textContent =
+  `${hikesDone} / ${GOAL} hikes completed (${progressPercent.toFixed(1)}%)`;
+document.getElementById("weekends").textContent =
+  `📅 ${weekends} Saturdays left until target date (May 22, 2027)`;
+
+document.getElementById("hikes").textContent = hikesDone;
+document.getElementById("goal").textContent = GOAL;
+document.getElementById("miles").textContent = formatMiles(totalMiles);
+document.getElementById("partners").textContent = partnerSet.size;
+
+const log = document.getElementById("hikeLog");
+hikes.forEach((h, i) => {
+  const row = document.createElement("div");
+  row.className = "hike";
+  row.appendChild(document.createTextNode(`${i + 1}. ${h.name}`));
+
+  const details = [formatDate(h.date), `${formatMiles(Number(h.miles) || 0)} miles`]
+    .concat((h.partners || []).length || (h.groups || []).length
+      ? [[...(h.partners || []), ...(h.groups || [])].join(", ")]
+      : []);
+
+  const small = document.createElement("div");
+  small.className = "small";
+  small.textContent = details.join(" • ");
+  row.appendChild(small);
+  log.appendChild(row);
+});
 </script>
 
 </body>
